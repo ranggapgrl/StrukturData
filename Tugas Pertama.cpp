@@ -35,6 +35,7 @@ int main(){
 		cout<<"1. Input Data Mahasiswa"<<endl;
 		cout<<"2. Tampil Berdasarkan Nilai Rata - Rata Tertinggi"<<endl;
 		cout<<"3. Pencarian Berdasarkan NIM"<<endl;
+		cout<<"4. Hapus data mahasiswa"<<endl;
 		cout<<"0. Keluar"<<endl;
 		cout<<"Pilih Menu : ";
 		cin>>pilih;
@@ -123,7 +124,31 @@ int main(){
 					cout<<"Rata - Rata\t: "<<mhs[ketemu].rata_rata<<endl;
 				}
 
+				
 				break;
+			case 4:
+                // Hapus data mahasiswa
+                cout << "Masukkan NIM yang ingin dihapus : ";
+                cin >> nim;
+                ketemu = -1;
+                for (int i = 0; i < jumlah_mhs; i++) {
+                    if (nim == mhs[i].nim) {
+                        ketemu = i;
+                        break;
+                    }
+                }
+
+                if (ketemu != -1) {
+                    for (int i = ketemu; i < jumlah_mhs - 1; i++) {
+                        mhs[i] = mhs[i + 1];
+                    }
+                    jumlah_mhs--; 
+                    cout << "Data mahasiswa dengan NIM " << nim << " berhasil dihapus." << endl;
+                } else {
+                    cout << "Mahasiswa dengan NIM " << nim << " tidak ditemukan." << endl;
+                }
+                break;
+			
 			default:
 				cout<<"Menu Tidak Tersedia";
 		}
