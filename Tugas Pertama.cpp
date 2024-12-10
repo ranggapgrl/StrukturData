@@ -45,7 +45,7 @@ int main(){
 				break;
 			case 1:
 				//input data
-				cout<<"Masukkan Banyak Mahasiswa : ";
+				cout<<"Masukkan Jumlah mahasiswa : ";
 				cin>>jumlah_mhs;
 				
 				for (int i = 0; i < jumlah_mhs; i++){
